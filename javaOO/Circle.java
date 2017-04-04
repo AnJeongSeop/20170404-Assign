@@ -11,10 +11,11 @@ public class Circle {
 		return radius * radius * PI;
 	}
 }
-class Cylinder {
-	Circle circle = new Circle(2.8);	
+class Cylinder {	
+	Circle circle; 
 	double height;
-	public Cylinder(double height){
+	public Cylinder(double radius, double height){
+		this.circle = new Circle(radius);
 		this.height = height;
 	}
 	double getVolume(){		
@@ -22,7 +23,7 @@ class Cylinder {
 		return Volume;
 	}
 	public static void main(String[] args) {
-		Cylinder cylinder = new Cylinder(5.6);
+		Cylinder cylinder = new Cylinder(2.8, 5.6);
 		System.out.println("원통의 부피 = " + cylinder.getVolume());
 	}
 }
